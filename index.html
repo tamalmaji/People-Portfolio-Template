@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="container-fluid" style="max-width: 1600px; background-color: rgb(235, 231, 231);">
+    <!-- Sidebar/menu -->
+    <nav class="navbar" style="width: 300px; z-index: 3; display: none;" id="mySidebar">
+        <br>
+       <div class="nabar-nav p-5">
+        <h3 href="#" class="nav-link  text-center"><b>SOME <br> NAME</b></h3>
+       </div>
+        <div class="navbar-nav text-center">
+            <a href="" class="nav-link px-2 py-3">CLOSE</a>
+            <a href="" class="nav-link px-2 py-3">PORTFOLIO</a>
+            <a href="" class="nav-link px-2 py-3">ABOUT ME</a>
+            <a href="" class="nav-link px-2 py-3">CONTACT</a>
+        </div>
+    </nav>
+    <!-- Top menu on small screens -->
+    <header class="container-fluid fixed-top d-lg-none bg-white small-screens" style="height: 50px;">
+        <samp>SOME NAME</samp>
+        <a href="javascript:void(0)" class="btn text-dark float-right" onclick="navopen()">☰</a>
+    </header>
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="container-fluid d-lg-none overlay" onclick="navclose()" id="myOverlay"></div>
+    <!-- PAGE CONTENT -->
+    <div class="page-content" style="margin-left: 300px;">
+        <!-- Push down content on small screens -->
+        <!-- <div class="col d-lg-none" style="margin-top: 83px;"></div> -->
+        <!-- Photo grid -->
+        <div class="col p-0 m-0">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12  p-0 m-0">
+                    <img src="img/natureboy.jpg" alt="A boy surrounded by beautiful nature" style="width: 100%;" onclick="onClick(this)">
+                    <img src="img/girl_mountain.jpg" alt="What a beautiful scenery this sunset" style="width: 100%;">
+                    <img src="img/girl.jpg" alt="The Beach. Me. Alone. Beautiful" style="width: 100%;">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12  p-0 m-0">
+                    <img src="img/boy.jpg" alt="Quiet day at the beach. Cold, but beautiful" style="width: 100%;">
+                    <img src="img/man_bench.jpg" alt="Waiting for the bus in the desert" style="width: 100%;">
+                    <img src="img/natureboy.jpg" alt="Nature again.. At its finest!" style="width: 100%;">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12  p-0 m-0">
+                    <img src="img/girl.jpg" alt="Canoeing again" style="width: 100%;">
+                    <img src="img/girl_train.jpg" alt="A girl, and a train passing" style="width: 100%;">
+                    <img src="img/closegirl.jpg" alt="What a beautiful day!" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- java script -->
+    <!-- <script src="main.js"></script> -->
+    <script>
+        function navopen(){
+            document.getElementById("mySidebar").style.display = "block"
+            document.getElementById("myOverlay").style.display = "block"
+        }
+        function navclose(){
+            document.getElementById("mySidebar").style.display = "none"
+            document.getElementById("myOverlay").style.display = "none"
+        }
+        // Modal Image Gallery
+            function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+            }
+    </script>
+</body>
+</html>
